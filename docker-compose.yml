@@ -1,13 +1,7 @@
 version: '2'
  
 services:
-  app:
-    build:
-      context:  ./app
-      dockerfile: Dockerfile
-    expose:
-      - "5000"
- 
+
   proxy:
     build:
       context:  ./nginx
@@ -16,3 +10,10 @@ services:
       - "8080:8080"
     links:
       - app
+      
+  app:
+    build:
+      context:  ./app
+      dockerfile: Dockerfile
+    expose:
+      - "5000"
