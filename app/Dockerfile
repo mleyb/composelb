@@ -14,5 +14,4 @@ FROM microsoft/aspnetcore:2.0.0
 WORKDIR /app
 COPY --from=build-env /app/out ./
 ENV ASPNETCORE_URLS http://+:5000
-EXPOSE 5050
 ENTRYPOINT ["dotnet", "app.dll"]
